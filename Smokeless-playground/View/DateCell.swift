@@ -24,9 +24,6 @@ public class DateCell: UICollectionViewCell {
         view.backgroundColor = UIColor.white
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.cornerRadius = 18
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowRadius = 3
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -109,9 +106,15 @@ public class DateCell: UICollectionViewCell {
         if pickedDay == subtitle {
             titleLabel.textColor = .smokeLessBlue
             subtitleLabel.textColor = .smokeLessBlue
+            container.layer.shadowOpacity = 0.3
+            container.layer.shadowRadius = 3
+            container.layer.shadowOffset = CGSize(width: 0, height: 0)
         }else {
             titleLabel.textColor = .black
             subtitleLabel.textColor = .black
+            container.layer.shadowOpacity = 0
+            container.layer.shadowRadius = 0
+            
         }
             
             if today == stringUiToday {

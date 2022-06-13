@@ -36,9 +36,6 @@ public class TittleCell: UICollectionViewCell {
     }
     
     //MARK: - Selectors
-    @objc func didTapChangeMonth() {
-        
-    }
     
     //MARK: - Helpers
     
@@ -51,8 +48,6 @@ public class TittleCell: UICollectionViewCell {
     
     public func setup(title: String) {
         self.titleLabel.text = title
-
-        
     }
 }
 
