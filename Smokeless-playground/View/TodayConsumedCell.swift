@@ -1,14 +1,14 @@
 //
-//  TodayProgressCell.swift
+//  TodayConsumedCell.swift
 //  Smokeless-playground
 //
-//  Created by Kevin ahmad on 12/06/22.
+//  Created by Kevin ahmad on 15/06/22.
 //
 
 
 import UIKit
 
-public class TodayProgressCell: UICollectionViewCell {
+public class TodayConsumedCell: UICollectionViewCell {
     
     //MARK: - Properties
     
@@ -20,12 +20,9 @@ public class TodayProgressCell: UICollectionViewCell {
     
     var container: UIView = {
         let view = UIView()
-        
-        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.cornerRadius = 18
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowRadius = 3
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.smokeLessLightGray.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -33,7 +30,7 @@ public class TodayProgressCell: UICollectionViewCell {
     
     var titleLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.text = "Wed"
+        label.text = "Cigarettes Consumed"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,19 +48,10 @@ public class TodayProgressCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
-    var bottomLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.text = "Cigarettes"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.textAlignment = .left
-        return label
-    }()
     
     //MARK: - Lifecycle
     
@@ -86,29 +74,14 @@ public class TodayProgressCell: UICollectionViewCell {
         titleLabel.anchor(top:container.topAnchor,left: container.leftAnchor, right: container.rightAnchor,paddingTop: 20, paddingLeft: 10)
         titleLabel.centerX(inView: self)
         
-        container.addSubview(bottomLabel)
+       
         container.addSubview(subtitleLabel)
-        subtitleLabel.anchor(left: container.leftAnchor,bottom: bottomLabel.topAnchor,right: container.rightAnchor ,paddingLeft: 10,paddingBottom: 5)
-        
-        
-        bottomLabel.anchor(left: container.leftAnchor, bottom: container.bottomAnchor, right: container.rightAnchor, paddingLeft: 10, paddingBottom: 30)
-        
+        subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: container.leftAnchor, right: container.rightAnchor)
+       
         
     }
     
     public func setup(title: Int, subtitle: String) {
-        if title == 0 {
-            self.titleLabel.text = "Today Limit"
-            self.subtitleLabel.text = "13"
-            self.container.backgroundColor = .smokeLessBlue
-        }else {
-            self.titleLabel.text = "Today Cigarettes Consume"
-            self.subtitleLabel.text = "10"
-            self.container.backgroundColor = .smokeLessGreen
-        }
-            
-        
-        
-        
+        self.container.backgroundColor = .smokeLessBlue
     }
 }

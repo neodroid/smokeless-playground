@@ -51,10 +51,10 @@ public class DateCell: UICollectionViewCell {
     
     var blueDot: UIView = {
         let view = UIView()
-        view.backgroundColor = .smokeLessBlue
-        view.layer.cornerRadius = 5
-        view.setDimensions(width: 10, height: 10)
-        view.isHidden = true
+        view.backgroundColor = .smokeLessLightGray
+        view.layer.cornerRadius = 10
+        view.setDimensions(width: 20, height: 20)
+        view.isHidden = false
         return view
     }()
     
@@ -72,8 +72,6 @@ public class DateCell: UICollectionViewCell {
     //MARK: - Helpers
     
     func configureUI() {
-        
-        
         contentView.addSubview(container)
         container.anchor(top:contentView.topAnchor,left: contentView.leftAnchor,bottom: contentView.bottomAnchor,right: contentView.rightAnchor)
         
@@ -84,8 +82,8 @@ public class DateCell: UICollectionViewCell {
         container.addSubview(subtitleLabel)
         subtitleLabel.anchor(top:titleLabel.bottomAnchor,left: container.leftAnchor,right: container.rightAnchor ,paddingTop: 10)
         
-        container.addSubview(blueDot)
-        blueDot.anchor(top: container.bottomAnchor, paddingTop: 15)
+        contentView.addSubview(blueDot)
+        blueDot.anchor(top: container.bottomAnchor, paddingTop: 10)
         blueDot.centerX(inView: self)
         
     }
@@ -104,24 +102,23 @@ public class DateCell: UICollectionViewCell {
             let stringUiToday = dateFormatter.string(from: uiToday ?? Date())
         
         if pickedDay == subtitle {
-            titleLabel.textColor = .smokeLessBlue
-            subtitleLabel.textColor = .smokeLessBlue
+            
             container.layer.shadowOpacity = 0.3
             container.layer.shadowRadius = 3
             container.layer.shadowOffset = CGSize(width: 0, height: 0)
         }else {
-            titleLabel.textColor = .black
-            subtitleLabel.textColor = .black
             container.layer.shadowOpacity = 0
             container.layer.shadowRadius = 0
             
         }
             
             if today == stringUiToday {
-                blueDot.isHidden = false
+                titleLabel.textColor = .smokeLessBlue
+                subtitleLabel.textColor = .smokeLessBlue
                 
             }else {
-                blueDot.isHidden = true
+                titleLabel.textColor = .black
+                subtitleLabel.textColor = .black
                 
             }
             

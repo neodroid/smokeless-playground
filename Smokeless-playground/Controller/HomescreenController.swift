@@ -20,7 +20,8 @@ class HomescreenController: UIViewController, MonthChangeDelegate{
         collectionView.register(DateCell.self, forCellWithReuseIdentifier: "dateCell")
         collectionView.register(TopHeaderCell.self, forCellWithReuseIdentifier: "topHeaderCell")
         collectionView.register(TittleCell.self, forCellWithReuseIdentifier: "TittleCell")
-        collectionView.register(TodayProgressCell.self, forCellWithReuseIdentifier: "TodayProgressCell")
+        collectionView.register(TodayLimitCell.self, forCellWithReuseIdentifier: "TodayLimitCell")
+        collectionView.register(TodayConsumedCell.self, forCellWithReuseIdentifier: "TodayConsumedCell")
         return collectionView
     }()
     
@@ -91,17 +92,17 @@ class HomescreenController: UIViewController, MonthChangeDelegate{
     // Layout untuk cell collectionView
     func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            
             if section == 0 {
                 return LayoutBuilder.buildHeaderSectionLayout(size: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)))
             }else if section == 1{
                 return LayoutBuilder.buildGallerySectionLayout(size: NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(90)))
             }else if section == 2{
                 return LayoutBuilder.buildTitleLayout(size: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)))
+            }else if section == 3{
+                return LayoutBuilder.buildTodayProgressSectionLayout(size: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)))
             }else {
-                return LayoutBuilder.buildTodayProgressSectionLayout(size: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalWidth(0.5)))
+                return LayoutBuilder.buildTodayProgressSectionLayout(size: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)))
             }
-            
         }
         return layout
         
@@ -122,14 +123,10 @@ class HomescreenController: UIViewController, MonthChangeDelegate{
 
 extension HomescreenController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0  {
-            return 1
-        }else if section == 1{
+        if section == 1{
             return calendarLogic.monthData?.numberOfDays ?? 1
-        }else if section == 2{
-            return 1
         }else {
-            return 2
+            return 1
         }
     }
     
@@ -143,15 +140,18 @@ extension HomescreenController: UICollectionViewDelegate, UICollectionViewDataSo
         }else if indexPath.section == 2{
             let cell = CellBuilder.getTittleCell(collectionView: collectionView, indexPath: indexPath)
             return cell
+        }else if indexPath.section == 3{
+            let cell = CellBuilder.getLimitCell(collectionView: collectionView, indexPath: indexPath)
+            return cell
         }else {
-            let cell = CellBuilder.getProgressCell(collectionView: collectionView, indexPath: indexPath, startDay:calendarLogic.monthData?.firstDayWeekday ?? 0)
+            let cell = CellBuilder.getConsumedCell(collectionView: collectionView, indexPath: indexPath)
             return cell
         }
     }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

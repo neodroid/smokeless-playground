@@ -24,8 +24,10 @@
 		CB0473D72855B9B600C8D305 /* TittleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0473D62855B9B600C8D305 /* TittleCell.swift */; };
 		CB0473D92855B9C800C8D305 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0473D82855B9C700C8D305 /* MonthMetadata.swift */; };
 		CB0473DB2855B9D700C8D305 /* MonthTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0473DA2855B9D700C8D305 /* MonthTemplate.swift */; };
-		CB0473DD2855C07B00C8D305 /* TodayProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0473DC2855C07B00C8D305 /* TodayProgressCell.swift */; };
 		CB0473DF28560D3F00C8D305 /* HomescreenCalendarLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0473DE28560D3F00C8D305 /* HomescreenCalendarLogic.swift */; };
+		CB97A5342859E0EF00805487 /* TodayLimitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97A5332859E0EF00805487 /* TodayLimitCell.swift */; };
+		CB97A5362859E4D600805487 /* TodayConsumedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97A5352859E4D600805487 /* TodayConsumedCell.swift */; };
+		CB97A5382859ED8000805487 /* GoalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97A5372859ED8000805487 /* GoalsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +50,10 @@
 		CB0473D62855B9B600C8D305 /* TittleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TittleCell.swift; sourceTree = "<group>"; };
 		CB0473D82855B9C700C8D305 /* MonthMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetadata.swift; sourceTree = "<group>"; };
 		CB0473DA2855B9D700C8D305 /* MonthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTemplate.swift; sourceTree = "<group>"; };
-		CB0473DC2855C07B00C8D305 /* TodayProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProgressCell.swift; sourceTree = "<group>"; };
 		CB0473DE28560D3F00C8D305 /* HomescreenCalendarLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenCalendarLogic.swift; sourceTree = "<group>"; };
+		CB97A5332859E0EF00805487 /* TodayLimitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayLimitCell.swift; sourceTree = "<group>"; };
+		CB97A5352859E4D600805487 /* TodayConsumedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayConsumedCell.swift; sourceTree = "<group>"; };
+		CB97A5372859ED8000805487 /* GoalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +126,9 @@
 				CB0473D22855B98F00C8D305 /* DateCell.swift */,
 				CB0473D42855B9A600C8D305 /* TopHeaderCell.swift */,
 				CB0473D62855B9B600C8D305 /* TittleCell.swift */,
-				CB0473DC2855C07B00C8D305 /* TodayProgressCell.swift */,
+				CB97A5332859E0EF00805487 /* TodayLimitCell.swift */,
+				CB97A5352859E4D600805487 /* TodayConsumedCell.swift */,
+				CB97A5372859ED8000805487 /* GoalsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,17 +226,19 @@
 				CB0473C82855B91E00C8D305 /* Extensions.swift in Sources */,
 				CB0473D32855B98F00C8D305 /* DateCell.swift in Sources */,
 				CB0473D92855B9C800C8D305 /* MonthMetadata.swift in Sources */,
+				CB97A5362859E4D600805487 /* TodayConsumedCell.swift in Sources */,
 				CB0473D12855B97B00C8D305 /* LayoutBuilder.swift in Sources */,
 				CB0473B12855B1AF00C8D305 /* ViewController.swift in Sources */,
 				CB0473CC2855B95700C8D305 /* HomescreenController.swift in Sources */,
 				CB0473CF2855B96C00C8D305 /* CellBuilder.swift in Sources */,
+				CB97A5382859ED8000805487 /* GoalsCell.swift in Sources */,
 				CB0473CA2855B94000C8D305 /* ChangeMonthController.swift in Sources */,
 				CB0473D52855B9A600C8D305 /* TopHeaderCell.swift in Sources */,
+				CB97A5342859E0EF00805487 /* TodayLimitCell.swift in Sources */,
 				CB0473DF28560D3F00C8D305 /* HomescreenCalendarLogic.swift in Sources */,
 				CB0473B72855B1AF00C8D305 /* Smokeless_playground.xcdatamodeld in Sources */,
 				CB0473DB2855B9D700C8D305 /* MonthTemplate.swift in Sources */,
 				CB0473D72855B9B600C8D305 /* TittleCell.swift in Sources */,
-				CB0473DD2855C07B00C8D305 /* TodayProgressCell.swift in Sources */,
 				CB0473AD2855B1AF00C8D305 /* AppDelegate.swift in Sources */,
 				CB0473AF2855B1AF00C8D305 /* SceneDelegate.swift in Sources */,
 			);

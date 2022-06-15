@@ -70,7 +70,7 @@ public class TopHeaderCell: UICollectionViewCell {
         subtitleLabel.anchor(top:titleLabel.bottomAnchor,left: contentView.leftAnchor,paddingTop: 10)
         
         contentView.addSubview(monthPicker)
-        monthPicker.anchor(top:subtitleLabel.topAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, paddingRight: 20)
+        monthPicker.anchor(top:subtitleLabel.topAnchor, bottom: contentView.bottomAnchor, right: contentView.rightAnchor, paddingRight: 0)
         monthPicker.frame = CGRect(x: 0, y: 0, width: 20, height: 100)
         
     }
